@@ -40,6 +40,10 @@
         margin: 0;
 }
 
+#store .entry form, #store .entry form div {
+    display: inline;
+}
+
 #product_list .list_description dt {
 	color:        #244;
 	font-weight:  bold;

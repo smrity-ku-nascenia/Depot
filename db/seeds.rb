@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+=begin
 Product.delete_all
 
 Product.create(:title => 'Programming Ruby 1.9',
@@ -17,4 +17,6 @@ you should add Ruby to your toolbox.
 </p>},
                :image_url => '/images/ruby.jpg',
                :price => 49.50)
-
+=end
+LineItem.delete_all
+Cart.delete_all
