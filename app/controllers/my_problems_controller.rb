@@ -1,6 +1,6 @@
 class MyProblemsController < ApplicationController
   before_action :set_my_problem, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize
   # GET /my_problems
   # GET /my_problems.json
   def index

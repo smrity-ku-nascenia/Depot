@@ -1,5 +1,4 @@
 class StoreController < ApplicationController
-  before_action :authorize
 
   def index
     if params[:set_locale]

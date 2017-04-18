@@ -3,5 +3,5 @@ I18n.default_locale = :en
 
 LANGUAGES = [
   ['English',                  'en'],
-  ["Bangla".html_safe, 'bn']
+  ["বাংলা".html_safe, 'bn']
 ]

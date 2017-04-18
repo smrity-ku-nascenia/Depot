@@ -29,6 +29,7 @@ en:
       line_items: "Line Items"
       user: "Users"
       my_problem: "My Problems"
+      log_out: "Log Out"
   store:
     index:
       title_html: "Your Pragmatic Catalog"

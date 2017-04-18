@@ -9,6 +9,7 @@ bn:
       line_items: "লাইন আইটেম"
       user: "ব্যবহারকারীদের তালিকা"
       my_problem: "আমার সমস্যাসমূহ"
+      log_out: "লগ আউট"
   store:
     index:
       title_html: "আপনার প্রাগমেটিক ক্যাটালগ"

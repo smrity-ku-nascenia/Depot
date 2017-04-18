@@ -44,7 +44,7 @@
          <%= link_to t('.line_items'), line_items_path %><br />
          <%= link_to t('.user'), users_path %><br />
          <%= link_to t('.my_problem'), my_problems_path %><br /><br>
-     <%= button_to 'Logout', logout_path, :method => :delete %>
+     <%= button_to t('.log_out'), logout_path, :method => :delete %>
    <% end %>
 
      <div style="color: #e0f8f8"><br>Current Date and Time:<br> <%= Time.now %></br><br></div>

@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   skip_before_filter :authorize, :only => [:create, :update, :destroy]
-  before_action  only: [:show, :edit, :update, :destroy]
+  before_action :authorize
   # GET /carts
   # GET /carts.json
   def index
