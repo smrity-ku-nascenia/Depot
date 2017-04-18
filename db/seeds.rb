@@ -8,6 +8,9 @@
 =begin
 Product.delete_all
 
+LineItem.delete_all
+Cart.delete_all
+=end
 Product.create(:title => 'Programming Ruby 1.9',
                :description =>
                    %{<p>
@@ -15,8 +18,15 @@ Ruby is the fastest growing and most exciting dynamic language
 out there. If you need to get working programs delivered fast,
 you should add Ruby to your toolbox.
 </p>},
-               :image_url => '/images/ruby.jpg',
-               :price => 49.50)
-=end
-LineItem.delete_all
-Cart.delete_all
+               :image_url => '/assets/ruby.jpg',
+               :price => 449.50)
+
+Product.create(:title => 'Programming Rails',
+               :description =>
+                   %{<p>
+Rails is the fastest growing and most exciting dynamic framework
+out there. If you need to get working programs delivered fast,
+you should add Rails to your toolbox.
+</p>},
+               :image_url => '/assets/rails.png',
+               :price => 550.50)

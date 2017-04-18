@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Pragprog Books Online Store</title>
+
+  <link rel="shortcut icon" href="assets/download.png"  type="image/png" />
+
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,20 +13,42 @@
 
 <body id="store">
  <div id="banner">
+   <%= form_tag store_path, class: 'locale', :method => :get do %>
+       <%= select_tag 'set_locale',
+                      options_for_select(LANGUAGES, I18n.locale.to_s),
+                      onchange: 'this.form.submit()' %>
+       <%= submit_tag 'submit' %>
+       <%= javascript_tag "$('.locale input').hide()" %>
+   <% end %>
    <%= image_tag("logo.png") %>
-   <%= @page_title || "Pragmatic Bookshelf" %>
+   <%= @page_title || t('.title') %>
  </div>
+
 
  <div id="columns">
    <div id="side">
-   <a href="/store/index">Home</a><br />
-   <a href="/products">Products</a><br />
-   <a href="/carts">Cart</a><br />
-   <a href="/line_items">Line Items</a><br />
-   <a href="http://www..../faq">Questions</a><br />
-   <a href="http://www..../news">News</a><br />
-   <a href="http://www..../contact">Contact</a><br /><br />
+
+     <% if @cart %>
+      <div id="cart">
+         <% hidden_div_if(@cart.line_items.empty?, :id => 'cart') do %>
+            <%= render @cart %>
+         <% end %>
+      </div>
+     <% end %>
+
+   <a href="/store/index"><%= t('.home') %></a><br />
+
+   <% if session[:user_id] %>
+         <%= link_to t('.order'), orders_path %><br />
+         <%= link_to t('.cart'), carts_path %><br />
+         <%= link_to t('.line_items'), line_items_path %><br />
+         <%= link_to t('.user'), users_path %><br />
+         <%= link_to t('.my_problem'), my_problems_path %><br /><br>
+     <%= button_to 'Logout', logout_path, :method => :delete %>
+   <% end %>
+
      <div style="color: #e0f8f8"><br>Current Date and Time:<br> <%= Time.now %></br><br></div>
+
    </div>
 
    <div id="main">

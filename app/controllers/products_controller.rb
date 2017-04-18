@@ -5,11 +5,20 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @cart = current_cart
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+  end
+
+  def who_bought
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.atom
+      format.json {render :json => @product}
+    end
   end
 
   # GET /products/new

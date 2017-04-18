@@ -1,0 +1,17 @@
+<% @sum = 0 %>
+Dear Administrator,<br><br>
+
+The following order has been corrupted.<br><br>
+
+<table>
+  <tr>
+    Name: <%= @order.name %><br>
+    Address: <%= @order.address %><br>
+    Email: <%= @order.email %><br>
+    pay-Type: <%= @order.pay_type %><br>
+    Date: <%= @order.ship_date %><br>
+  </tr>
+</table>
+<br>
+
+Please check the order details.

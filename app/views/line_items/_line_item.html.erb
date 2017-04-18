@@ -1,0 +1,14 @@
+<% unless line_item.quantity == 0 %>
+    <% if line_item == @current_item %>
+        <tr id="current_item">
+    <% else %>
+        <tr>
+    <% end %>
+      <td><%= line_item.product.title %></td>
+      <td class="item_price"><%= number_to_currency(line_item.product.price) %>&times;<%= "#{line_item.quantity}= #{line_item.quantity*line_item.price}" %></td>
+      <% unless @sum.nil?
+        @sum +=  line_item.quantity*line_item.price
+           # = #{line_item.quantity*line_item.price}
+      end %>
+    </tr>
+<% end %>

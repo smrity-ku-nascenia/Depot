@@ -1,0 +1,15 @@
+<% @sum = 0 %>
+Dear <%= @order.name %>,<br><br>
+Your order from The Pragmatic Store has been updated.<br><br>
+You final order contains the following items:<br><br>
+<table>
+  <%= render @order.line_items %>
+  ___________________________________________
+  <tr class="total-line">
+    <td colspan="1">Total</td>
+    <td class="total-cell"><%= "=>#{number_to_currency(@sum, :unit=>"Tk.")}" %></td>
+  </tr>
+</table>
+<br>
+
+We'll send you a separate e-mail when your order ships.
